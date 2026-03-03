@@ -1,7 +1,12 @@
-#PITANJA MODERATORA
+# INTERVJU
 
-1. nešto o sebi?
-2. koliko često koristite stranicu?
-3. vaš dojam?
-4. kako ste došli do toga?
-5. molim pokušajte naći ... preko homepagea?
+## PITANJA MODERATORA primjeri
+
+1. Nešto o sebi?
+2. Koliko često koristite stranicu?
+3. Vaš dojam?
+4. Kako ste došli do toga?
+5. Molim pokušajte naći ... preko homepagea?
+
+## ZADATAK
+
