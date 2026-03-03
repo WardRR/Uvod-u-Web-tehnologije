@@ -1,6 +1,6 @@
-# FAZA 2 - INTERVJU
+# FAZA 2 - Intervju
 
-## PITANJA MODERATORA primjeri
+## PITANJA MODERATORA primjeri sa predavanja
 
 1. Nešto o sebi?
 2. Koliko često koristite stranicu?
@@ -10,3 +10,7 @@
 
 ## ZADATAK
 
+izjava
+problem
+potreba
+funkcionalnost
