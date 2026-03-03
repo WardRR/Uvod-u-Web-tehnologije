@@ -10,7 +10,16 @@
 
 ## ZADATAK
 
-izjava
-problem
-potreba
-funkcionalnost
+izjava --> problem --> potreba --> funkcionalnost
+
+### Ispitanik - Lovro
+Pitanja:
+Zapis:
+
+### Ispitanik - Samuel
+Pitanja:
+Zapis:
+
+### Ispitanik - Tome
+Pitanja:
+Zapis:
