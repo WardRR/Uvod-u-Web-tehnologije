@@ -129,6 +129,14 @@ Napravio bih da je sve na jednoj stranici — da vidim predmete s kratkim opisom
 | **Potreba** | Student treba pristupiti sustavu s bilo kojeg uređaja. |
 | **Funkcionalnost** | Mobile-first responzivan dizajn s prilagođenim prikazom za manje ekrane. |
 
+### 8.
+
+| | |
+|---|---|
+| **Izjava** | "Nejasne informacije o težini predmeta" / "Nema ni recenzije a prolaznost bi bila realna ocjena" |
+| **Problem** | Nepostojana informacija prolaznosti predmeta / težini u neovisnosti ECTS brojeva. |
+| **Potreba** | Student treba biti informiran o prolaznosti predmeta. |
+| **Funkcionalnost** | Sučelje koje govori o prolaznosti predmeta. |
 ---
 
 ## Zahtjevi korisnika (User Requirements)
