@@ -150,3 +150,4 @@ Napravio bih da je sve na jednoj stranici — da vidim predmete s kratkim opisom
 | UR5 | Sustav mora imati jednostavnu navigaciju s tražilicom i brzim pristupom najčešćim akcijama. | Potreba 5 |
 | UR6 | Sustav mora omogućiti dodavanje predmeta u osobnu košaricu s pregledom ukupnih ECTS bodova i mogućnošću uklanjanja. | Potreba 6 |
 | UR7 | Sustav mora biti u potpunosti funkcionalan i optimiziran za mobilne uređaje (mobile-first pristup). | Potreba 7 |
+| UR8 | Sustav mora prikazivati informacije o prolaznosti predmeta. | Potreba 8 |
