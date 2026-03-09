@@ -16,7 +16,7 @@
 ### Pitanje 1: Kada otvoriš stranicu s aktivnim predmetima na Studomatu, kakav ti je prvi dojam — kako ti djeluje to sučelje i koliko se lako snalaziš?
 
 **Odgovor ispitanika:**
-Iskreno, dosta je zbunjujuće. Sve je u jednoj velikoj tablici, puno stupaca, puno podataka odjednom. Trebam malo vremena da se snađem i pronađem ono što tražim. Djeluje zastarjelo i pretrpano — nema nekakve vizualne hijerarhije, sve izgleda isto važno pa ne znam gdje prvo pogledati.
+Iskreno, dosta je zbunjujuće. Sve je u jednoj velikoj tablici, puno stupaca, puno podataka odjednom. Trebam malo vremena da se snađem i pronađem ono što tražim. Djeluje pretrpano — nema nekakve vizualne hijerarhije, sve izgleda isto važno pa ne znam gdje prvo pogledati.
 
 ---
 
@@ -44,14 +44,14 @@ Da, jednom sam htio usporediti dva izborna predmeta i morao sam otvarati svaki p
 ### Pitanje 5: Koliko ti je jasno koji su predmeti obvezni, a koji izborni kada gledaš stranicu s aktivnim predmetima?
 
 **Odgovor ispitanika:**
-Uopće mi nije jasno. Tablica prikazuje sve predmete zajedno — i obvezne i izborne — pa je teško razlikovati koje mogu birati. Svi predmeti su u istom formatu, istoj boji, bez ikakve oznake. Morao sam pitati kolegu da mi objasni koji su izborni. Mislim da postoji stupac "Izborna grupa" ali vrijednosti u njemu mi ništa ne govore. Bilo bi puno lakše da su vizualno odvojeni — drugom bojom, oznakom ili kategorijom.
+Uopće mi nije jasno. Tablica prikazuje sve predmete zajedno — i obvezne i izborne — pa je teško razlikovati koje mogu birati. Svi predmeti su u istom formatu, istoj boji, bez ikakve oznake. Mislim da postoji stupac "Izborna grupa" ali vrijednosti u njemu mi ništa ne govore. Bilo bi puno lakše da su vizualno odvojeni — drugom bojom, oznakom ili kategorijom.
 
 ---
 
 ### Pitanje 6: Koliko ti je važno znati što drugi studenti misle o nekom predmetu i gdje trenutno pronalaziš takve informacije — uključujući sadržaj predmeta i stvarna iskustva kolega?
 
 **Odgovor ispitanika:**
-Najviše me zanima što ću zapravo učiti — sadržaj predmeta. I kakva su iskustva drugih studenata. Trenutno pitam starije kolege u WhatsApp grupama koji predmeti su dobri, ponekad pogledam Facebook grupe fakulteta. Na samom Studomatu ne mogu naći ništa korisno osim naziva i ECTS bodova. Bilo bi odlično da na Studomatu mogu vidjeti silabus i nekakve ocjene ili recenzije od studenata koji su već prošli taj predmet.
+Najviše me zanima što ću zapravo učiti — sadržaj predmeta. I kakva su iskustva drugih studenata. Trenutno pitam starije kolege u WhatsApp grupama koji predmeti su dobri. Na samom Studomatu ne mogu naći ništa korisno osim naziva i ECTS bodova. Bilo bi odlično da i na Studomatu mogu vidjeti silabus i nekakve ocjene ili recenzije od studenata koji su već prošli taj predmet.
 
 ---
 
@@ -65,7 +65,7 @@ Nemam gotovo nikakve informacije o težini predmeta na Studomatu. ECTS bodovi ne
 ### Pitanje 8: Jesi li ikada propustio neki važan rok vezan uz upis predmeta — i kako si uopće saznao za te rokove?
 
 **Odgovor ispitanika:**
-Da, na prvoj godini početak drugog semestra sam propustio rok za upis jednog izbornog predmeta jer nisam znao do kad traje upisni period. Na Studomatu nema nikakvog upozorenja osim da pratim obavijesti na web stranici fakulteta. Saznao sam prekasno od kolege a i kasno sam saznao da mogu na Merlinu odabrati Referada SIT gdje tajnica ubiti šalje obavijesti. Bilo bi super da sustav Studomata također šalje automatskeobavijesti ili podsjetnike — na e-mail ili kao push notifikaciju — kad se približava rok za upis ili kad se otvori novi upisni period.
+Da, na prvoj godini početak drugog semestra sam propustio rok za upis jednog izbornog predmeta jer nisam znao do kad traje upisni period. Na Studomatu nema nikakvog upozorenja osim da pratim obavijesti na web stranici fakulteta. Saznao sam prekasno od kolege a i kasno sam saznao da mogu na Merlinu odabrati Referada SIT gdje tajnica ubiti šalje obavijesti. Bilo bi super da sustav Studomata također šalje automatske obavijesti ili podsjetnike — na e-mail ili kao push notifikaciju — kad se približava rok za upis ili kad se otvori novi upisni period.
 
 ---
 
