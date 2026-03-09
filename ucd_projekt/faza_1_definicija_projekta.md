@@ -1,3 +1,5 @@
+[← Natrag na README](../README.md)
+
 # FAZA 1 - Definicija projekta
 
 ## 1. Svrha sustava

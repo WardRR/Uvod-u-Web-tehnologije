@@ -1,3 +1,5 @@
+[← Natrag na README](../README.md)
+
 # OBRAZAC PRIVOLE ZA PRIKUPLJANJE I OBRADU OSOBNIH PODATAKA
 
 Sukladno **Općoj uredbi o zaštiti podataka (GDPR)**, ovim putem tražimo Vašu privolu za prikupljanje i obradu osobnih podataka u svrhu poboljšanja naših usluga i provođenja korisničkog ispitivanja.

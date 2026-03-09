@@ -1,3 +1,5 @@
+[← Natrag na README](../README.md)
+
 # Faza 2: Protokol za intervju
 
 ## 1. Podaci o intervjuu

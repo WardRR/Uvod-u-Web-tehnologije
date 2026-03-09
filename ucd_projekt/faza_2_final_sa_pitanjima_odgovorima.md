@@ -1,3 +1,5 @@
+[← Natrag na README](../README.md)
+
 # Faza 2: Intervju - Pitanja i odgovori (Finalna verzija)
 
 ## Podaci o intervjuu

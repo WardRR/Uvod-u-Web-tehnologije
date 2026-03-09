@@ -1,3 +1,5 @@
+[← Natrag na README](../README.md)
+
 # FAZA 2 - Korisničke potrebe
 
 ## Analiza korisničkih potreba
