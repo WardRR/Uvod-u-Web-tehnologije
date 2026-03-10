@@ -19,3 +19,4 @@
 ### Faza 3: JTBD
 - [YouTube video](https://www.youtube.com/watch?v=-WCl9TMxbHg)
 - [JTBD in Practice: 10 Jobs to Be Done Templates](https://www.uxtweak.com/jobs-to-be-done/templates/)
+- [MIRO JTBD Tameplate](https://miro.com/app/board/uXjVGzhBJME=/)
