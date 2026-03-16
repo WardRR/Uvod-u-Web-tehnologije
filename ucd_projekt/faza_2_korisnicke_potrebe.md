@@ -1,4 +1,4 @@
-[← Natrag na README](../README.md)
+<!-- [← Natrag na README](../README.md) -->
 
 # FAZA 2 - Korisničke potrebe
 

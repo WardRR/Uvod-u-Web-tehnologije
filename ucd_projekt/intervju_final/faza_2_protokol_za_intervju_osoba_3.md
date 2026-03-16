@@ -1,15 +1,17 @@
-[← Natrag na README](../../README.md)
+<!-- [← Natrag na README](../../README.md) -->
 
 # Faza 2: Protokol za intervju — Osoba 3
 
-## 1. Podaci o intervjuu
+## 1. Intervju podaci
 
-| Podatak | Vrijednost |
-|---|---|
-| **Datum** | 09.03.2026. |
-| **Moderator** | Tomislav Perica |
-| **Ispitanik** | Lovro Krpina |
-| **Bilješke vodi** | Samuel Puljiz |
+
+**Datum:** 09.03.2026.
+
+**Moderator:** Tomislav Perica
+
+**Ispitanik:** Lovro Krpina
+
+**Bilješke vodi:** Samuel Puljiz
 
 ---
 
