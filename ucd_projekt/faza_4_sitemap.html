@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faza 5 — Sitemap | Odabir izbornih predmeta UNIZD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0c0f14;
+            --surface: #151922;
+            --surface-raised: #1c2230;
+            --border: #2a3244;
+            --border-glow: #3d4f6f;
+            --text: #e2e6ee;
+            --text-muted: #7a849a;
+            --accent-blue: #4a90d9;
+            --accent-cyan: #56c8d8;
+            --accent-violet: #8b6cc1;
+            --accent-amber: #d4a24e;
+            --accent-rose: #c96b7e;
+            --accent-green: #5db87a;
+            --node-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px var(--border);
+            --glow-blue: 0 0 30px rgba(74,144,217,0.15);
+            --glow-cyan: 0 0 30px rgba(86,200,216,0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(74,144,217,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(74,144,217,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top gradient wash */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(74,144,217,0.08) 0%, rgba(139,108,193,0.04) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px 100px;
+        }
+
+        /* ─── Header ─── */
+        header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        header .tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(86,200,216,0.25);
+            padding: 6px 18px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeDown 0.6s ease forwards 0.1s;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: clamp(36px, 5vw, 56px);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent-cyan) 60%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeDown 0.7s ease forwards 0.25s;
+        }
+
+        header p {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeDown 0.7s ease forwards 0.4s;
+        }
+
+        /* ─── Legend ─── */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeDown 0.6s ease forwards 0.55s;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        /* ─── Sitemap Tree ─── */
+        .sitemap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        /* Root node */
+        .root-node {
+            position: relative;
+            background: linear-gradient(135deg, var(--surface-raised), var(--surface));
+            border: 1px solid var(--accent-cyan);
+            border-radius: 16px;
+            padding: 28px 48px;
+            text-align: center;
+            box-shadow: var(--node-shadow), var(--glow-cyan);
+            opacity: 0;
+            animation: scaleIn 0.5s ease forwards 0.7s;
+        }
+
+        .root-node::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            z-index: -1;
+            opacity: 0.4;
+            filter: blur(1px);
+        }
+
+        .root-node h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .root-node span {
+            font-size: 12px;
+            color: var(--accent-cyan);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Connector line from root */
+        .connector-root {
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--border));
+            opacity: 0;
+            animation: growDown 0.4s ease forwards 0.9s;
+        }
+
+        /* Level 1: main branches */
+        .level-1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            width: 100%;
+            max-width: 1300px;
+            position: relative;
+        }
+
+        .level-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(16.666% + 14px);
+            right: calc(16.666% + 14px);
+            height: 2px;
+            background: var(--border);
+            opacity: 0;
+            animation: fadeIn 0.4s ease forwards 1s;
+        }
+
+        /* Branch card */
+        .branch {
+            position: relative;
+            opacity: 0;
+            animation: fadeUp 0.5s ease forwards;
+        }
+        .branch:nth-child(1) { animation-delay: 1.1s; }
+        .branch:nth-child(2) { animation-delay: 1.2s; }
+        .branch:nth-child(3) { animation-delay: 1.3s; }
+        .branch:nth-child(4) { animation-delay: 1.4s; }
+        .branch:nth-child(5) { animation-delay: 1.5s; }
+        .branch:nth-child(6) { animation-delay: 1.6s; }
+
+        /* Vertical connector from horizontal line */
+        .branch::before {
+            content: '';
+            position: absolute;
+            top: -26px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 26px;
+            background: var(--border);
+        }
+
+        .branch-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            box-shadow: var(--node-shadow);
+        }
+
+        .branch-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-4px);
+            box-shadow: var(--node-shadow), 0 12px 40px rgba(0,0,0,0.3);
+        }
+
+        .branch-header {
+            padding: 20px 22px 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .branch-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .branch-header h3 {
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .branch-header .branch-id {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .branch-children {
+            padding: 14px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .child {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.5;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .child:hover {
+            background: rgba(255,255,255,0.03);
+        }
+
+        .child-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .child-text {
+            flex: 1;
+        }
+
+        .child-text .label {
+            font-weight: 500;
+        }
+
+        .child-text .sub {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+
+        .ur-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+            position: relative;
+            top: -1px;
+        }
+
+        /* Color themes per branch */
+        .theme-blue .branch-icon { background: rgba(74,144,217,0.15); color: var(--accent-blue); }
+        .theme-blue .child-dot { background: var(--accent-blue); }
+        .theme-blue .ur-tag { background: rgba(74,144,217,0.15); color: var(--accent-blue); }
+        .theme-blue .branch-card:hover { border-color: rgba(74,144,217,0.35); }
+
+        .theme-cyan .branch-icon { background: rgba(86,200,216,0.15); color: var(--accent-cyan); }
+        .theme-cyan .child-dot { background: var(--accent-cyan); }
+        .theme-cyan .ur-tag { background: rgba(86,200,216,0.15); color: var(--accent-cyan); }
+        .theme-cyan .branch-card:hover { border-color: rgba(86,200,216,0.35); }
+
+        .theme-violet .branch-icon { background: rgba(139,108,193,0.15); color: var(--accent-violet); }
+        .theme-violet .child-dot { background: var(--accent-violet); }
+        .theme-violet .ur-tag { background: rgba(139,108,193,0.15); color: var(--accent-violet); }
+        .theme-violet .branch-card:hover { border-color: rgba(139,108,193,0.35); }
+
+        .theme-amber .branch-icon { background: rgba(212,162,78,0.15); color: var(--accent-amber); }
+        .theme-amber .child-dot { background: var(--accent-amber); }
+        .theme-amber .ur-tag { background: rgba(212,162,78,0.15); color: var(--accent-amber); }
+        .theme-amber .branch-card:hover { border-color: rgba(212,162,78,0.35); }
+
+        .theme-rose .branch-icon { background: rgba(201,107,126,0.15); color: var(--accent-rose); }
+        .theme-rose .child-dot { background: var(--accent-rose); }
+        .theme-rose .ur-tag { background: rgba(201,107,126,0.15); color: var(--accent-rose); }
+        .theme-rose .branch-card:hover { border-color: rgba(201,107,126,0.35); }
+
+        .theme-green .branch-icon { background: rgba(93,184,122,0.15); color: var(--accent-green); }
+        .theme-green .child-dot { background: var(--accent-green); }
+        .theme-green .ur-tag { background: rgba(93,184,122,0.15); color: var(--accent-green); }
+        .theme-green .branch-card:hover { border-color: rgba(93,184,122,0.35); }
+
+        /* Second row spacing */
+        .level-1-row2 {
+            margin-top: 28px;
+        }
+
+        /* ─── Footer mapping table ─── */
+        .mapping-section {
+            margin-top: 80px;
+            opacity: 0;
+            animation: fadeUp 0.6s ease forwards 1.8s;
+        }
+
+        .mapping-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .mapping-section .subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+        }
+
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .mapping-table thead th {
+            text-align: left;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .mapping-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.5;
+        }
+
+        .mapping-table tbody tr:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .mapping-table .page-name {
+            font-weight: 600;
+        }
+
+        /* ─── Animations ─── */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes growDown {
+            from { opacity: 0; transform: scaleY(0); transform-origin: top; }
+            to { opacity: 1; transform: scaleY(1); transform-origin: top; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 1100px) {
+            .level-1 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .level-1::before { display: none; }
+            .branch::before { display: none; }
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 40px 20px 80px; }
+            .level-1 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .legend { gap: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div class="tag">Faza 5 — Informacijska Arhitektura</div>
+            <h1>Sitemap</h1>
+            <p>Struktura web sučelja za odabir izbornih predmeta na UNIZD-u, temeljena na korisničkim zahtjevima UR1–UR10 i JTBD izjavama.</p>
+        </header>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent-blue)"></div>Autentifikacija</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent-cyan)"></div>Nadzorna ploča</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent-violet)"></div>Katalog predmeta</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent-amber)"></div>Moj odabir</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent-rose)"></div>Obavijesti</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--accent-green)"></div>Profil studenta</div>
+        </div>
+
+        <!-- Sitemap tree -->
+        <div class="sitemap">
+
+            <!-- Root -->
+            <div class="root-node">
+                <span>Landing page</span>
+                <h2>Početna stranica</h2>
+            </div>
+
+            <div class="connector-root"></div>
+
+            <!-- Level 1: Row 1 -->
+            <div class="level-1">
+
+                <!-- 1. Prijava -->
+                <div class="branch theme-blue">
+                    <div class="branch-card">
+                        <div class="branch-header">
+                            <div class="branch-icon">🔐</div>
+                            <div>
+                                <div class="branch-id">[1] Autentifikacija</div>
+                                <h3>Prijava</h3>
+                            </div>
+                        </div>
+                        <div class="branch-children">
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[1.1] Prijava putem AAI@EduHr</div>
+                                    <div class="sub">Jedinstvena prijava za sve studente UNIZD-a</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[1.2] Oporavak lozinke</div>
+                                    <div class="sub">Reset putem institucijskog email-a</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Dashboard -->
+                <div class="branch theme-cyan">
+                    <div class="branch-card">
+                        <div class="branch-header">
+                            <div class="branch-icon">📊</div>
+                            <div>
+                                <div class="branch-id">[2] Nadzorna ploča</div>
+                                <h3>Dashboard</h3>
+                            </div>
+                        </div>
+                        <div class="branch-children">
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[2.1] Pregled statusa upisa</div>
+                                    <div class="sub">Trenutno stanje odabira i ECTS ukupno</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[2.2] Obavijesti i rokovi <span class="ur-tag">UR8</span></div>
+                                    <div class="sub">Nadolazeći rokovi i bitne obavijesti</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[2.3] Brzi pristup odabranim predmetima</div>
+                                    <div class="sub">Direktan link na popis odabranih</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Katalog predmeta -->
+                <div class="branch theme-violet">
+                    <div class="branch-card">
+                        <div class="branch-header">
+                            <div class="branch-icon">📚</div>
+                            <div>
+                                <div class="branch-id">[3] Katalog predmeta</div>
+                                <h3>Pregled i odabir</h3>
+                            </div>
+                        </div>
+                        <div class="branch-children">
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[3.1] Popis predmeta — kartični prikaz <span class="ur-tag">UR1</span> <span class="ur-tag">UR5</span></div>
+                                    <div class="sub">Vizualno razlikovanje obveznih / izbornih predmeta</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[3.2] Filtriranje i pretraživanje <span class="ur-tag">UR3</span></div>
+                                    <div class="sub">ECTS, semestar, kategorija, ključne riječi</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[3.3] Detalji predmeta <span class="ur-tag">UR2</span> <span class="ur-tag">UR6</span> <span class="ur-tag">UR7</span></div>
+                                    <div class="sub">Silabus, ishodi, ocjenjivanje, prolaznost, recenzije, statistika upisa (UR9)</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[3.4] Usporedba predmeta <span class="ur-tag">UR4</span></div>
+                                    <div class="sub">Usporedno 2–3 predmeta prema kriterijima</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Moj odabir -->
+                <div class="branch theme-amber level-1-row2">
+                    <div class="branch-card">
+                        <div class="branch-header">
+                            <div class="branch-icon">✅</div>
+                            <div>
+                                <div class="branch-id">[4] Moj odabir</div>
+                                <h3>Odabrani predmeti</h3>
+                            </div>
+                        </div>
+                        <div class="branch-children">
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[4.1] Popis odabranih predmeta <span class="ur-tag">UR10</span></div>
+                                    <div class="sub">ECTS ukupno, uklanjanje i zamjena predmeta</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[4.2] Potvrda odabira</div>
+                                    <div class="sub">Pregled konačnog odabira i potvrda upisa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Obavijesti -->
+                <div class="branch theme-rose level-1-row2">
+                    <div class="branch-card">
+                        <div class="branch-header">
+                            <div class="branch-icon">🔔</div>
+                            <div>
+                                <div class="branch-id">[5] Obavijesti</div>
+                                <h3>Rokovi i notifikacije</h3>
+                            </div>
+                        </div>
+                        <div class="branch-children">
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[5.1] Popis obavijesti <span class="ur-tag">UR8</span></div>
+                                    <div class="sub">Kronološki prikaz svih obavijesti</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[5.2] Postavke obavijesti</div>
+                                    <div class="sub">Izbor kanala: email i/ili push notifikacije</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[5.3] Kalendar rokova</div>
+                                    <div class="sub">Vizualni pregled svih upisnih rokova</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Profil -->
+                <div class="branch theme-green level-1-row2">
+                    <div class="branch-card">
+                        <div class="branch-header">
+                            <div class="branch-icon">👤</div>
+                            <div>
+                                <div class="branch-id">[6] Profil studenta</div>
+                                <h3>Osobni podatci</h3>
+                            </div>
+                        </div>
+                        <div class="branch-children">
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[6.1] Osobni podaci</div>
+                                    <div class="sub">Ime, smjer, godina studija</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[6.2] Povijest upisa predmeta</div>
+                                    <div class="sub">Arhiva prethodno upisanih izbornih predmeta</div>
+                                </div>
+                            </div>
+                            <div class="child">
+                                <div class="child-dot"></div>
+                                <div class="child-text">
+                                    <div class="label">[6.3] Postavke</div>
+                                    <div class="sub">Notifikacije, jezik sučelja, tema</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /level-1 -->
+        </div><!-- /sitemap -->
+
+        <!-- Mapping table -->
+        <section class="mapping-section">
+            <h2>Mapiranje</h2>
+            <p class="subtitle">Povezanost stranica s korisničkim zahtjevima i JTBD izjavama</p>
+            <table class="mapping-table">
+                <thead>
+                    <tr>
+                        <th>Stranica</th>
+                        <th>Korisnički zahtjevi</th>
+                        <th>JTBD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="page-name">[3.1] Popis predmeta — kartični prikaz</td>
+                        <td>UR1, UR5</td>
+                        <td>JTBD 1, JTBD 5</td>
+                    </tr>
+                    <tr>
+                        <td class="page-name">[3.2] Filtriranje i pretraživanje</td>
+                        <td>UR3</td>
+                        <td>JTBD 3</td>
+                    </tr>
+                    <tr>
+                        <td class="page-name">[3.3] Detalji predmeta + statistika</td>
+                        <td>UR2, UR6, UR7, UR9</td>
+                        <td>JTBD 2, JTBD 6, JTBD 7, JTBD 9</td>
+                    </tr>
+                    <tr>
+                        <td class="page-name">[3.4] Usporedba predmeta</td>
+                        <td>UR4</td>
+                        <td>JTBD 4</td>
+                    </tr>
+                    <tr>
+                        <td class="page-name">[4.1] Odabrani predmeti + zamjena</td>
+                        <td>UR10</td>
+                        <td>JTBD 10</td>
+                    </tr>
+                    <tr>
+                        <td class="page-name">[4.2] Potvrda odabira</td>
+                        <td>—</td>
+                        <td>Job Map: faza 5</td>
+                    </tr>
+                    <tr>
+                        <td class="page-name">[5] Obavijesti i rokovi</td>
+                        <td>UR8</td>
+                        <td>JTBD 8</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+</body>
+</html>
