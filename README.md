@@ -21,3 +21,7 @@
 - [YouTube video](https://www.youtube.com/watch?v=-WCl9TMxbHg)
 - [JTBD in Practice: 10 Jobs to Be Done Templates](https://www.uxtweak.com/jobs-to-be-done/templates/)
 - [MIRO JTBD Tameplate](https://miro.com/app/board/uXjVGzhBJME=/)
+
+### Faza 4: Sitemap
+- [Faza 4 - Sitemap](ucd_projekt/faza_4_sitemap.md)
+- [Sitemap na Miro ploči](https://miro.com/app/board/uXjVGszo5Ow=/?share_link_id=652923526895)
